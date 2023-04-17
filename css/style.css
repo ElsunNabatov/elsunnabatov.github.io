@@ -9988,3 +9988,53 @@ h6,
   padding: 0;
   list-style-type: none;
 }
+
+
+.atl-logo{
+  width: 200px;
+  height: 200px;
+}
+
+
+.cbiko-logo,
+.deloitte-logo{
+  width: 270px;
+  height: 150px;
+}
+
+.prodata-logo{
+  width: 200px;
+  height: 50px;
+}
+
+.crrc-logo {
+  width: 170px;
+  height: 150px;
+}
+
+.company-logo img{
+  width: 100%;
+  height: 100%;
+}
+
+
+@media (max-width:575px){
+  .company-images{
+    flex-direction: column;
+  }
+  .company-logo{
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+
+@media (max-width:767px){
+  .company-images{
+    flex-direction: column;
+  }
+  .company-logo{
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+}
