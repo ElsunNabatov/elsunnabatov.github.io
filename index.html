@@ -3,791 +3,1377 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Elsun Nabatov</title>
+    <title>Elsun Nabatov - ML Engineer & AI Researcher</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Elsun, Nabatov, website, portfolio, data, business, business analyst, data analytics, data analyst, data science, data scientist, machine learning, artificial intelligence" name="keywords">
-    <meta content="Elsun Nabatov website" name="description">
-    <meta author="Elsun Nabatov">
+    <meta content="Elsun Nabatov, Machine Learning Engineer, AI Researcher, Data Scientist, Neuro-AI, Computational Neuroscience, Generative AI, NLP, Deep Learning" name="keywords">
+    <meta content="Elsun Nabatov - ML Engineer at Multiverse Computing, AI Researcher specializing in neuro-AI, computational neuroscience, and uncertainty-aware decision systems" name="description">
+    <meta name="author" content="Elsun Nabatov">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
-    <link rel="icon" href="img/about.jpg" type="image/icon type">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a0e27;
+            --secondary: #1a1f3a;
+            --accent: #00d4ff;
+            --accent-warm: #ff6b35;
+            --text-primary: #e8eaed;
+            --text-secondary: #9aa0a6;
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --border: #30363d;
+        }
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0d1117 100%);
+        }
+
+        .animated-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(13, 17, 23, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h2 {
+            font-family: 'Space Mono', monospace;
+            font-size: 1rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .hero-text h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: #00b8e6;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+            border: 1px solid var(--border);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .section-header .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        /* Research Interests */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .research-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
+        }
+
+        .research-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .research-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .research-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--accent) 0%, var(--accent-warm) 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .timeline-item:hover {
+            border-color: var(--accent);
+            transform: translateX(10px);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 2rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--bg-dark);
+        }
+
+        .timeline-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .timeline-item .company {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .timeline-item .date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .timeline-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline-item ul li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-secondary);
+            position: relative;
+        }
+
+        .timeline-item ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Publications */
+        .publications-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .publication-card {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .publication-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
+        }
+
+        .pub-icon {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .pub-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .pub-venue {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .pub-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .pub-content p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .pub-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .pub-link:hover {
+            color: #00b8e6;
+        }
+
+        .pub-year {
+            font-family: 'Space Mono', monospace;
+            font-size: 3rem;
+            color: rgba(0, 212, 255, 0.2);
+            font-weight: 700;
+        }
+
+        /* Awards */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .award-card {
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(0, 212, 255, 0.05) 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .award-card::before {
+            content: '🏆';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 6rem;
+            opacity: 0.1;
+        }
+
+        .award-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .award-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .award-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .award-badge {
+            display: inline-block;
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            font-family: 'Space Mono', monospace;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--accent);
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Education */
+        .education-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            transition: all 0.3s;
+        }
+
+        .education-card:hover {
+            border-color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .education-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .education-card .degree {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .education-card .gpa {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .education-date {
+            font-family: 'Space Mono', monospace;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-align: right;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            border-color: var(--accent);
+            transform: translateX(10px);
+        }
+
+        .contact-item i {
+            font-size: 1.8rem;
+            color: var(--accent);
+        }
+
+        .contact-item h3 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+            color: var(--text-primary);
+        }
+
+        .contact-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            padding: 3rem 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .skills-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .publication-card {
+                grid-template-columns: 1fr;
+            }
+
+            .pub-year {
+                text-align: center;
+            }
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+    </style>
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="51">
-    <!-- Navbar Start -->
-    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
-        <a href="index.html" class="navbar-brand ml-lg-3">
-            <h1 class="m-0 display-5"><span class="text-primary">Elsun Nabatov</span></h1>
-        </a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
-            <div class="navbar-nav m-auto py-0">
-                <a href="#home" class="nav-item nav-link active">Home</a>
-                <a href="#about" class="nav-item nav-link">About</a>
-                <a href="#qualification" class="nav-item nav-link">Education & Experience</a>
-                <a href="#skill" class="nav-item nav-link">Working Places</a>
-                <a href="#skill" class="nav-item nav-link">Skills</a>
-                <a href="#service" class="nav-item nav-link">Services</a>
-                <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
-                <a href="#contact" class="nav-item nav-link">Contact</a>
-            </div>
-            <!-- <a href="" class="btn btn-outline-primary d-none d-lg-block">Hire Me</a> -->
+<body>
+    <div class="animated-bg"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">EN.</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
-    <!-- Navbar End -->
 
-
-    <!-- Video Modal Start -->
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>        
-                    <!-- 16:9 aspect ratio -->
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Video Modal End -->
-
-
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary-elsun d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
-                    <img class="img-fluid w-100 rounded-circle shadow-sm" src="img/profile.jpg" alt="">
-                </div>
-                <div class="col-lg-7 text-center text-lg-left">
-                    <h2 class="text-white font-weight-normal mb-3">I'm</h2>
-                    <h1 class="display-4 text-uppercase bg-primary-elsun mb-2" style="-webkit-text-stroke: 2px #ffffff;">Elsun Nabatov</h1>
-                    <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
-                    <div class="typed-text d-none">Data Scientist | AI Engineer </div>
-                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-                        <a href="Elsun_Nabatov (Resume).pdf" class="btn btn-outline-light mr-5" target="_blank">Download CV</a>
-                        <!-- <button type="button" class="btn-play" data-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
-                            <span></span>
-                        </button>
-                        <h5 class="font-weight-normal text-white m-0 ml-4 d-none d-sm-block">Play Video</h5> -->
+            <div class="hero-content">
+                <div class="hero-text fade-in">
+                    <h2>Machine Learning Engineer & AI Researcher</h2>
+                    <h1>Elsun Nabatov</h1>
+                    <p class="subtitle">
+                        Bridging neuroscience and artificial intelligence to build uncertainty-aware decision systems. 
+                        Currently at Multiverse Computing, working on quantum-inspired optimization and multi-agent RL systems.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                        <a href="Elsun_Nabatov_Resume.pdf" class="btn btn-secondary" target="_blank" download>Download CV</a>
                     </div>
+                </div>
+                <div class="hero-image fade-in delay-2">
+                    <img src="img/profile.jpg" alt="Elsun Nabatov">
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Header End -->
+    </section>
 
-
-    <!-- About Start -->
-    <div class="container-fluid py-5" id="about">
+    <!-- About Section -->
+    <section id="about">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #b9babb;">About</h1>
-                <h1 class="position-absolute text-uppercase text-primary">About Me</h1>
+            <div class="section-header fade-in">
+                <h2>About Me</h2>
+                <p class="subtitle">ML Engineer | AI Researcher | Neuroscience Enthusiast</p>
             </div>
-            <div class="row align-items-center">
-                <div class="col-lg-5 pb-4 pb-lg-0">
-                    <img class="img-fluid rounded w-100" src="img/about.jpg" alt="">
-                </div>
-                <div class="col-lg-7">
-                    <h3 class="mb-4">Senior Data Analyst | Scientist</h3>
-                    <p>
-                        Hi, my name is Elsun Nabatov and I work as Senior Scientist for PRODATA company. 
-                        I'm currently studying for an MSc in Data Science (specialization in AI) at Newcastle University. 
-                        Experienced AI Engineer adept in NLP (LLM). Proven track record of leading strategic initiatives to enhance business outcomes
-                        using data-driven insights. Eager to contribute to the company's mission by leveraging advanced data modeling skills and a strong
-                        background in business domain analysis.
-                    </p>
-                    <div class="row mb-3">
-                        <div class="col-sm-6 py-2"><h6>Name: <span class="text-secondary">Elsun Nabatov</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Birthday: <span class="text-secondary">15 July 2000</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Degree: <span class="text-secondary">Master</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Professional Experience: <span class="text-secondary">4 Years</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Phone: <span class="text-secondary">(+44)744 295 4099</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Email: <span class="text-secondary">elsunnabatov@gmail.com</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Address: <span class="text-secondary">Newcastle, United Kingdom</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Remote: <span class="text-secondary">Available</span></h6></div>
-                    </div>
-                    <!-- <a href="" class="btn btn-outline-primary mr-4">Hire Me</a>
-                    <a href="" class="btn btn-outline-primary">Learn More</a> -->
-                </div>
+            <div style="max-width: 900px; margin: 0 auto; text-align: center; color: var(--text-secondary); font-size: 1.1rem; line-height: 1.9;">
+                <p class="fade-in delay-1">
+                    I'm a Machine Learning Engineer at <strong style="color: var(--accent);">Multiverse Computing</strong> in San Sebastian, Spain, 
+                    with a passion for neuro-AI and computational neuroscience. I hold an MSc in Data Science (AI specialization) from Newcastle University 
+                    with <strong style="color: var(--accent);">Distinction</strong>, where I was awarded a prestigious government scholarship valued at over $100,000.
+                </p>
+                <p class="fade-in delay-2" style="margin-top: 2rem;">
+                    My research focuses on how intelligent agents—biological or artificial—form reliable representations from incomplete or noisy sensory data. 
+                    I combine generative modeling, optimization, and causal inference to study perception, communication impairments, and robust inference in complex environments.
+                </p>
+                <p class="fade-in delay-3" style="margin-top: 2rem;">
+                    I've developed production AI systems serving 10M+ users, published in Q1 journals (AI & Society, International Journal of Environmental Science), 
+                    and was selected as one of <strong style="color: var(--accent);">100 researchers worldwide</strong> for the Mediterranean ML Summer School 
+                    sponsored by Google DeepMind and NeurIPS.
+                </p>
             </div>
         </div>
-    </div>
-    <!-- About End -->
+    </section>
 
-
-    <!-- Qualification Start -->
-    <div class="container-fluid py-5" id="qualification">
+    <!-- Research Interests -->
+    <section id="research">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #bfbfbf;">Quality</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Education & Experience</h1>
+            <div class="section-header fade-in">
+                <h2>Research Interests</h2>
+                <p class="subtitle">Exploring the intersection of neuroscience and artificial intelligence</p>
             </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h3 class="mb-4">My Education</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1"><a href="https://www.ncl.ac.uk/" target="_blank">Newcastle University (United Kingdom)</a></h5>
-                            <p class="mb-2"><strong>MSc in Data Science (specialization in AI)</strong> | <small>2023 - Present</small></p>
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1"><a href="https://www.yildiz.edu.tr/en" target="_blank">Yildiz Technical University (Turkey)</a></h5>
-                            <p class="mb-2"><strong>MSc in Quantitative Economics </strong> | <small>2021 - 2023</small></p>
-                            <p>
-                                <!-- Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est tempor dolor. Clita l
-                                orem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam -->
-                            </p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Azerbaijan State Economic University</h5>
-                            <p class="mb-2"><strong>BSc in Economics (English sector)</strong> | <small>2017 - 2021</small></p>
-                            <p>
-                                <!-- Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est tempor dolor. 
-                                Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam -->
-                            </p>
-                        </div>
-                        <!-- <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Master In CSE</h5>
-                            <p class="mb-2"><strong>Cambridge University</strong> | <small>2014 - 2018</small></p>
-                            <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam</p>
-                        </div> -->
-                    </div>
+            <div class="research-grid">
+                <div class="research-card fade-in delay-1">
+                    <i class="fas fa-brain"></i>
+                    <h3>Neuro-AI</h3>
+                    <p>
+                        Investigating how biological neural systems process information and applying these principles to develop 
+                        more robust and efficient artificial intelligence systems.
+                    </p>
                 </div>
-                <div class="col-lg-6">
-                    <h3 class="mb-4">My Experience</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Senior Data Scientist</h5>
-                            <p class="mb-2"><strong><a href="https://prodata.az/" target="_blank" style="text-decoration: underline">PRODATA Company</a></strong> | <small>November 2022 - Present</small></p>
-                            <p>
-                              • Collaborated with a team of 15 members to conduct end-to-end fine-tuning of models on TensorFlow, PyTorch, and
-                                Scikit-learn, achieving a remarkable 19% enhancement in overall performance and accuracy. <br>
-                              • Led the optimization of model hyperparameters, employing rigorous experimentation and cross-validation techniques,
-                                resulting in a notable 21% improvement in predictive accuracy and a 14% reduction in false positives, while fostering a
-                                collaborative team environment. <br>
-                              • Pioneered the conceptualization, and design of cross-functional environment, and development of NLP applications, harnessing
-                                advanced transformer models such as BERT and GPT. This collaborative effort significantly improved accuracy and
-                                performance in critical tasks like sentiment analysis and named entity recognition, leading to a substantial 40% increase
-                                in data classification precision. <br>
-                            </p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Economics Analyst</h5>
-                            <p class="mb-2"><strong><a href="https://www.tccb.gov.tr/en/" target="_blank" style="text-decoration: underline">Presidency Of The Republic Of Turkey</a></strong> | <small>July 2022 - November 2022</small></p>
-                            <p>
-                                My role was to analyze economic data and trends 
-                                to inform policymaking decisions, 
-                                and provide recommendations to senior officials based on my findings.
-                            </p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Business Analyst intern at Risk Advisory Department</a></h5>
-                            <p class="mb-2"><strong><a href="https://www2.deloitte.com/us/en.html" target="_blank" style="text-decoration: underline">Deloitte</a></strong> | <small>May 2022 - July 2022</small></p>
-                            <p>
-                                I assisted in analyzing data, developing reports, 
-                                and providing recommendations to clients to help them identify and manage risks in their operations.
-                            </p>
-                        </div>
-
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Data Analyst</h5>
-                            <p class="mb-2"><strong><a href="https://www.atltech.az/az" target="_blank" style="text-decoration: underline">ATL Tech</a></strong> | <small>July 2020 - October 2021</small></p>
-                            <p>
-                                My responsibilities included analyzing large data sets, producing reports and visualizations, 
-                                and providing actionable insights to drive data-informed decisions and improve business operations.
-                            </p>
-                        </div>
-
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Junior Research Fellow</h5>
-                            <p class="mb-2"><strong><a href="http://crrc.az/" target="_blank" style="text-decoration: underline">Caucasus Research Resource Centers</a></strong> | <small>September 2020 - August 2021</small></p>
-                            <p>
-                                I conducted research and analysis on socio-economic and political issues in the Caucasus region, 
-                                gathering and interpreting data, and providing recommendations to inform policy decisions.
-                            </p>
-                        </div>
-
-                        <!-- <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1"><a href="https://prodata.az/" target="_blank">Data Analyst</a>Student Intern</h5>
-                            <p class="mb-2"><strong>State Oil Company of the Republic of Azerbaijan (SOCAR)</strong> | <small>Feb 2018 - May 2018</small></p>
-                            <p>
-                                Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum
-                                 est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam
-                            </p>
-                        </div>
-
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Student Intern</h5>
-                            <p class="mb-2"><strong>Baker Hughes Company</strong> | <small>Oct 2017 - Dec 2017</small></p>
-                            <p>
-                                Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum 
-                                est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam
-                            </p>
-                        </div> -->
-                    </div>
+                <div class="research-card fade-in delay-2">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Computational Neuroscience</h3>
+                    <p>
+                        Building computational models to understand neural information processing, perception, and how the brain 
+                        forms reliable representations from noisy sensory data.
+                    </p>
+                </div>
+                <div class="research-card fade-in delay-3">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Uncertainty-Aware Systems</h3>
+                    <p>
+                        Developing decision systems that can quantify and reason about uncertainty, crucial for reliable AI 
+                        deployment in healthcare, autonomous systems, and critical infrastructure.
+                    </p>
+                </div>
+                <div class="research-card fade-in delay-4">
+                    <i class="fas fa-cube"></i>
+                    <h3>Generative Modeling</h3>
+                    <p>
+                        Creating advanced generative models (GANs, Diffusion Models) for 3D medical image reconstruction, 
+                        combining physics-guided approaches with vision-language models.
+                    </p>
+                </div>
+                <div class="research-card fade-in delay-1">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Causal Inference</h3>
+                    <p>
+                        Studying causal relationships in complex systems to build AI that understands not just correlations 
+                        but the underlying mechanisms driving observations.
+                    </p>
+                </div>
+                <div class="research-card fade-in delay-2">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Co-Design Systems</h3>
+                    <p>
+                        Integrating sensing, computation, and decision-making for applications in health monitoring, 
+                        mobility systems, and intelligent infrastructure.
+                    </p>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Qualification End -->
+    </section>
 
-
-    <!-- Companies start -->
-    <div class="container-fluid py-5 companies-section" id="skill">
-        <div class="container-fluid">
-            <div class="position-relative d-flex align-items-center justify-content-center mb-5">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #c4c4c4;">Companies</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Working Places</h1>
-            </div>
-            <div class="row align-items-center mt-5">
-                <div class="col-md-12">
-                    <div class="company-images d-flex align-items-center justify-content-between">
-                        <div class="company-logo atl-logo">
-                            <img src="./img/companies/atl.png"/>
-                        </div>
-                        <div class="company-logo cbiko-logo">
-                            <img src="./img/companies/cbiko.png"/>
-                        </div>
-                        <div class="company-logo crrc-logo">
-                            <img src="./img/companies/crrc.png"/>
-                        </div>
-                        <div class="company-logo deloitte-logo">
-                            <img src="./img/companies/deloitte.png"/>
-                        </div>
-                        <div class="company-logo prodata-logo">
-                            <img src="./img/companies/prodata.png"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Companies end -->
-
-
-    <!-- Skill Start -->
-    <div class="container-fluid py-5" id="skill">
+    <!-- Experience -->
+    <section id="experience">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #c4c4c4;">Skill</h1>
-                <h1 class="position-absolute text-uppercase text-primary">My Skills</h1>
+            <div class="section-header fade-in">
+                <h2>Work Experience</h2>
+                <p class="subtitle">Building production AI systems at scale</p>
             </div>
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Linear Algebra, Probability and Statistics</h6>
-                            <h6 class="font-weight-bold">80%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary2" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+            <div class="timeline">
+                <div class="timeline-item fade-in delay-1">
+                    <h3>Machine Learning Engineer</h3>
+                    <span class="company">Multiverse Computing</span>
+                    <span class="date">October 2025 - Present | San Sebastian, Spain</span>
+                    <ul>
+                        <li>Designed and deployed quantum-inspired optimization models and multi-agent RL systems that improved policy planning accuracy by 25% in government-scale simulations</li>
+                        <li>Built LLM-driven optimization pipelines integrating constraint-solving, numerical reasoning, and retrieval-augmented decision modules, reducing scenario-analysis time by 40%</li>
+                        <li>Implemented hybrid classical–quantum workflows for combinatorial optimization, improving solution quality by 15–20% compared to classical baselines</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item fade-in delay-2">
+                    <h3>Data Scientist / ML Engineer</h3>
+                    <span class="company">Yandex</span>
+                    <span class="date">November 2024 - October 2025 | Istanbul, Turkey</span>
+                    <ul>
+                        <li>Reduced hallucination rate by 30% in production by designing and deploying Yazeka, a Turkish GenAI assistant built with RAG pipelines, FAISS vector search, and RLHF-tuned LLMs</li>
+                        <li>Improved retrieval latency by 40% and search coverage by 20% through a hybrid neural + keyword search pipeline now serving 10M+ users</li>
+                        <li>Cut manual review costs by $1M+/year by training and deploying an XGBoost NLP classifier for URL categorization (95% precision)</li>
+                        <li>Boosted CTR by 12% and reduced bounce rate by 15% by leading development of a deep learning–based ranking model with A/B testing & MLflow monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item fade-in delay-3">
+                    <h3>Senior Data Scientist</h3>
+                    <span class="company">PRODATA</span>
+                    <span class="date">October 2022 - August 2024 | Tel Aviv, Israel</span>
+                    <ul>
+                        <li>Prevented $3M+ in annual churn-related losses by deploying customer retention models using logistic regression, XGBoost, and behavioral data</li>
+                        <li>Accelerated model refresh by 35% via automated ETL and ML pipelines using Databricks, Airflow, and MLflow</li>
+                        <li>Localized voice AI systems for Azerbaijani language by fine-tuning OpenAI Whisper for STT and VITS for TTS, achieving over 92% transcription accuracy</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item fade-in delay-4">
+                    <h3>Quantitative Analyst</h3>
+                    <span class="company">Presidency of the Turkey Republic</span>
+                    <span class="date">June 2022 - October 2022 | Ankara, Turkey</span>
+                    <ul>
+                        <li>Developed data-driven strategies to optimize government infrastructure, reducing costs by 20%</li>
+                        <li>Delivered financial models for forecasting inflation's impact, improving planning accuracy by 17%</li>
+                        <li>Collaborated with cross-functional teams to build ML models optimizing government operations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Publications & Research</h2>
+                <p class="subtitle">Contributing to AI and computational science</p>
+            </div>
+            <div class="publications-grid">
+                <div class="publication-card fade-in delay-1">
+                    <i class="fas fa-file-alt pub-icon"></i>
+                    <div class="pub-content">
+                        <h3>Physics-guided Hybrid GAN–Diffusion with Vision–Language Assistance for 2D to 3D Brain Reconstruction</h3>
+                        <span class="pub-venue">Mediterranean ML Summer School (Poster Presentation)</span>
+                        <span class="pub-date">2025 - Present</span>
+                        <p>
+                            A physics-guided hybrid GAN–Diffusion model reconstructs 3D brain volumes from 2D X-rays, integrating 
+                            vision–language guidance for interpretability and uncertainty estimation, achieving fast, accurate, and 
+                            reliable low-dose volumetric imaging.
+                        </p>
+                        <a href="#" class="pub-link">View Project →</a>
                     </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Python Programming Language</h6>
-                            <h6 class="font-weight-bold">75%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary2" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                    <div class="pub-year">2025</div>
+                </div>
+
+                <div class="publication-card fade-in delay-2">
+                    <i class="fas fa-file-alt pub-icon"></i>
+                    <div class="pub-content">
+                        <h3>The Economic and Operational Impacts of Artificial Intelligence on Agriculture</h3>
+                        <span class="pub-venue">AI & Society (Q1, Impact Factor: 4.9)</span>
+                        <span class="pub-date">2025 - Present</span>
+                        <p>
+                            This study investigates the transformative role of artificial intelligence (AI) technologies in modern 
+                            agriculture, analyzing economic impacts and operational efficiencies gained through AI adoption.
+                        </p>
+                        <a href="#" class="pub-link">View Paper →</a>
                     </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Database Management (MsSQL, PostgreSQL, OracleSQL, SQLite)</h6>
-                            <h6 class="font-weight-bold">80%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary2" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                    <div class="pub-year">2025</div>
+                </div>
+
+                <div class="publication-card fade-in delay-3">
+                    <i class="fas fa-file-alt pub-icon"></i>
+                    <div class="pub-content">
+                        <h3>Using Machine Learning to Enhance Productivity in Turkey: Insights on Soil Moisture, Temperature and Precipitation</h3>
+                        <span class="pub-venue">International Journal of Environmental Science and Technology (Q1, Impact Factor: 3.4)</span>
+                        <span class="pub-date">2024 - Present</span>
+                        <p>
+                            Applying machine learning techniques to agricultural data to improve productivity through analysis of 
+                            environmental factors including soil moisture, temperature, and precipitation patterns in Turkey.
+                        </p>
+                        <a href="#" class="pub-link">View Paper →</a>
                     </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Data Visualization (PowerBI, Tableau, Matplotlib, Seaborn)</h6>
-                            <h6 class="font-weight-bold">75%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary2" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                    <div class="pub-year">2024</div>
+                </div>
+
+                <div class="publication-card fade-in delay-4">
+                    <i class="fas fa-file-alt pub-icon"></i>
+                    <div class="pub-content">
+                        <h3>The Analysis of the Relationship Between Money Supply, Budget Deficit and Inflation Rate in Azerbaijan</h3>
+                        <span class="pub-venue">International Journal of Business and Economics Research</span>
+                        <span class="pub-date">2022 - Present</span>
+                        <p>
+                            Economic analysis investigating the complex relationships between monetary policy variables and inflation 
+                            in Azerbaijan's emerging economy.
+                        </p>
+                        <a href="#" class="pub-link">View Paper →</a>
                     </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Data Pre-processing (Pandas, Numpy, Excel) </h6>
-                            <h6 class="font-weight-bold">75%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary2" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                    <div class="pub-year">2022</div>
+                </div>
+
+                <div class="publication-card fade-in delay-1">
+                    <i class="fas fa-file-alt pub-icon"></i>
+                    <div class="pub-content">
+                        <h3>Institutional Base and Infrastructure Development for Non-Cash Payments in Azerbaijan</h3>
+                        <span class="pub-venue">Academic Journal of Economic Studies</span>
+                        <span class="pub-date">2020 - Present</span>
+                        <p>
+                            Examining the development of digital payment infrastructure and institutional frameworks in Azerbaijan's 
+                            financial sector transformation.
+                        </p>
+                        <a href="#" class="pub-link">View Paper →</a>
+                    </div>
+                    <div class="pub-year">2020</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards -->
+    <section id="awards">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Awards & Achievements</h2>
+                <p class="subtitle">Recognition for academic and research excellence</p>
+            </div>
+            <div class="awards-grid">
+                <div class="award-card fade-in delay-1">
+                    <h3>Mediterranean ML Summer School 2025</h3>
+                    <p>
+                        Selected as one of <strong>100 researchers worldwide</strong> for this prestigious program sponsored by 
+                        Google DeepMind, NeurIPS, and Jane Street. Includes travel scholarship and poster presentation opportunity.
+                    </p>
+                    <span class="award-badge">Google DeepMind</span>
+                </div>
+
+                <div class="award-card fade-in delay-2">
+                    <h3>Distinction in MSc Artificial Intelligence</h3>
+                    <p>
+                        Earned Distinction at Newcastle University, awarded to top-performing graduates in the Data Science (AI specialization) 
+                        program with a GPA of 3.9/4.0.
+                    </p>
+                    <span class="award-badge">Newcastle University</span>
+                </div>
+
+                <div class="award-card fade-in delay-3">
+                    <h3>UK Government Scholarship ($100,000+)</h3>
+                    <p>
+                        Awarded prestigious government scholarship covering full tuition, living expenses, visa fees, and travel 
+                        allowances for Master's degree at Newcastle University.
+                    </p>
+                    <span class="award-badge">2023 State Program</span>
+                </div>
+
+                <div class="award-card fade-in delay-4">
+                    <h3>Türkiye Government Scholarship (YTB)</h3>
+                    <p>
+                        Graduate Scholarship Program covering full tuition, monthly stipend, health insurance, dormitory, 
+                        Turkish language training, and round-trip travel. Award Number: 21AZ003711
+                    </p>
+                    <span class="award-badge">YTB Program</span>
+                </div>
+
+                <div class="award-card fade-in delay-1">
+                    <h3>Azerbaijan Government Scholarship</h3>
+                    <p>
+                        Four-year full scholarship for Bachelor's degree at Azerbaijan State Economic University, covering 
+                        tuition and living expenses based on academic excellence.
+                    </p>
+                    <span class="award-badge">2017-2021</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Education</h2>
+                <p class="subtitle">Academic foundation in AI and economics</p>
+            </div>
+            <div class="education-grid">
+                <div class="education-card fade-in delay-1">
+                    <div>
+                        <h3>Newcastle University</h3>
+                        <span class="degree">Master's in Data Science (Specialization in AI)</span>
+                        <p style="color: var(--text-secondary); margin-top: 1rem;">
+                            Advanced coursework in Deep Learning, Cloud ML Engineering, and Big Data. Conducted independent 
+                            GenAI research including a hybrid GAN-Diffusion model for 3D medical image reconstruction.
+                        </p>
+                        <span class="gpa">GPA: 3.9/4.0 | Distinction</span>
+                    </div>
+                    <div class="education-date">
+                        September 2023 - August 2024<br>
+                        <strong style="color: var(--accent);">United Kingdom</strong>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Machine Learning (Scikit-Learn)</h6>
-                            <h6 class="font-weight-bold">75%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary2" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+
+                <div class="education-card fade-in delay-2">
+                    <div>
+                        <h3>Yildiz Technical University</h3>
+                        <span class="degree">Master's in Quantitative Economics</span>
+                        <p style="color: var(--text-secondary); margin-top: 1rem;">
+                            Specialized courses: Artificial Intelligence in Quantitative Economics, Advanced Calculus II
+                        </p>
+                        <span class="gpa">GPA: 3.6/4.0</span>
                     </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Web Scraping (Beautiful Soup, Selenium)</h6>
-                            <h6 class="font-weight-bold">70%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary2" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                    <div class="education-date">
+                        October 2021 - July 2023<br>
+                        <strong style="color: var(--accent);">Turkey</strong>
                     </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Data Collection</h6>
-                            <h6 class="font-weight-bold">75%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary2" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                </div>
+
+                <div class="education-card fade-in delay-3">
+                    <div>
+                        <h3>Azerbaijan State Economic University</h3>
+                        <span class="degree">Bachelor's in Economics (English Sector)</span>
+                        <p style="color: var(--text-secondary); margin-top: 1rem;">
+                            Core courses: Economic Forecasting, Econometrics, Mathematics, Statistics I & II
+                        </p>
+                        <span class="gpa">GPA: 95.12/100</span>
                     </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Data Analysis</h6>
-                            <h6 class="font-weight-bold">80%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary2" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <!-- <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Wordpress</h6>
-                            <h6 class="font-weight-bold">85%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Javascript</h6>
-                            <h6 class="font-weight-bold">90%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Angular JS</h6>
-                            <h6 class="font-weight-bold">95%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Angular JS</h6>
-                            <h6 class="font-weight-bold">95%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div> -->
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">PyTorch | Tensorflow</h6>
-                            <h6 class="font-weight-bold">70%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary2" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                    <div class="education-date">
+                        September 2017 - July 2021<br>
+                        <strong style="color: var(--accent);">Azerbaijan</strong>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Skill End -->
+    </section>
 
-
-    <!-- Services Start -->
-    <div class="container-fluid pt-5" id="service">
+    <!-- Skills -->
+    <section id="skills">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #cccccc;">Service</h1>
-                <h1 class="position-absolute text-uppercase text-primary">My Services</h1>
+            <div class="section-header fade-in">
+                <h2>Technical Skills</h2>
+                <p class="subtitle">Expertise in ML, AI, and data engineering</p>
             </div>
-            <div class="row pb-3">
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-laptop service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Data Analyst</h4>
+            <div class="skills-grid">
+                <div class="skill-category fade-in delay-1">
+                    <h3>// Machine Learning & AI</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Random Forests</span>
+                        <span class="skill-tag">Gradient Boosting</span>
+                        <span class="skill-tag">XGBoost</span>
+                        <span class="skill-tag">Neural Networks</span>
+                        <span class="skill-tag">RNN/LSTM</span>
+                        <span class="skill-tag">CNN</span>
+                        <span class="skill-tag">Transformers</span>
+                        <span class="skill-tag">GANs</span>
+                        <span class="skill-tag">Diffusion Models</span>
+                        <span class="skill-tag">Multi-Agent RL</span>
+                        <span class="skill-tag">Quantum-Inspired Optimization</span>
                     </div>
-                    <p>
-                        I specialize in using data to uncover insights that drive business decisions.  <br>
-                        I collect, clean, and process data using tools such as SQL, Excel, and visualization software, 
-                        and present my findings in an easy-to-understand format.                    
-                    </p>
                 </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-laptop-code service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Data Scientist</h4>
+
+                <div class="skill-category fade-in delay-2">
+                    <h3>// NLP & Generative AI</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">GPT/LLMs</span>
+                        <span class="skill-tag">RAG Pipelines</span>
+                        <span class="skill-tag">RLHF</span>
+                        <span class="skill-tag">LoRA/PEFT</span>
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">LangGraph</span>
+                        <span class="skill-tag">BERT</span>
+                        <span class="skill-tag">Text Mining</span>
+                        <span class="skill-tag">Sentiment Analysis</span>
+                        <span class="skill-tag">NER</span>
                     </div>
-                    <p>
-                        I develop models using advanced statistical analysis and machine learning techniques to solve complex business problems. <br>
-                        I work with structured and unstructured data, and use tools like Python, TensorFlow, and PyTorch to build models for image 
-                        recognition and natural language processing. <br>
-                        Additionally, I extract data from websites and online sources using web scraping 
-                        libraries such as BeautifulSoup and Scrapy.                  
-                    </p>
                 </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-database service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Business Analyst</h4>
+
+                <div class="skill-category fade-in delay-3">
+                    <h3>// Data Science Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">scikit-learn</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Jupyter</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
                     </div>
-                    <p>
-                        I analyze and interpret data to provide insights that drive business decisions, 
-                        using tools like Excel, SQL, and data visualization software.  <br>
-                        I develop metrics to measure the success of business initiatives 
-                        and work with stakeholders to define key performance indicators.            
-                    </p>
                 </div>
-                
-                
+
+                <div class="skill-category fade-in delay-4">
+                    <h3>// Big Data & Cloud</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Apache Spark</span>
+                        <span class="skill-tag">Hadoop</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">GCP</span>
+                        <span class="skill-tag">Databricks</span>
+                        <span class="skill-tag">Airflow</span>
+                        <span class="skill-tag">MLflow</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Microservices</span>
+                        <span class="skill-tag">FastAPI</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in delay-1">
+                    <h3>// Data Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">FAISS</span>
+                        <span class="skill-tag">Vector Search</span>
+                        <span class="skill-tag">ELK Stack</span>
+                        <span class="skill-tag">ETL Pipelines</span>
+                        <span class="skill-tag">Batch ML</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in delay-2">
+                    <h3>// Visualization & BI</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Looker</span>
+                        <span class="skill-tag">QlikView</span>
+                        <span class="skill-tag">Grafana</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in delay-3">
+                    <h3>// Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">English (Fluent)</span>
+                        <span class="skill-tag">Russian (Native)</span>
+                        <span class="skill-tag">Turkish (Fluent)</span>
+                        <span class="skill-tag">Azerbaijani (Native)</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in delay-4">
+                    <h3>// Soft Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Leadership</span>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Storytelling</span>
+                        <span class="skill-tag">Critical Thinking</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Teamwork</span>
+                        <span class="skill-tag">Adaptability</span>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Services End -->
+    </section>
 
-    <div class="container-fluid pt-5" id="portfolio">
+    <!-- Contact -->
+    <section id="contact">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #d4d4d4;">Portfolio</h1>
-                <h1 class="position-absolute text-uppercase text-primary">My Portfolio</h1>
+            <div class="section-header fade-in">
+                <h2>Get in Touch</h2>
+                <p class="subtitle">Let's collaborate on innovative AI projects</p>
             </div>
-            <div class="row pb-3">
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-briefcase service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Risk Report</h4>
+            <div class="contact-grid">
+                <div class="contact-info fade-in delay-1">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>elsunnabatov@gmail.com</p>
+                        </div>
                     </div>
-                    <p>
-                        I created a sustainability risk report for Coca Cola. This report analyzed the company's sustainability performance 
-                        in areas such as water stewardship, energy and climate, and packaging, among others. Using data visualization tools 
-                        such as PowerBI, I presented the findings in an easily digestible format that allowed stakeholders to understand 
-                        the company's sustainability risks and opportunities. Through this project, I demonstrated my ability to use data 
-                        analysis to drive strategic decision-making and address complex business challenges.              
-                    </p>
-                    <!-- <a class="border-bottom border-primary text-decoration-none" href="">Read More</a> -->
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+34 68 252 11 10</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>San Sebastian, Spain</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-briefcase"></i>
+                        <div>
+                            <h3>Availability</h3>
+                            <p>Open to collaborations & research opportunities</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-briefcase service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Infection | Vaccination</h4>
+                <div class="fade-in delay-2">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--accent); font-family: 'Space Mono', monospace;">// Connect with me</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/ElsunNabatov" class="social-btn" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/elsunnabatov/" class="social-btn" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-btn" target="_blank" title="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        <a href="https://www.facebook.com/elsun.nabatov.90" class="social-btn" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/elsun_n/" class="social-btn" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:elsunnabatov@gmail.com" class="social-btn" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
-                    <p>
-                        This project involved simulating the spread of an infectious disease and the impact of vaccination in Azerbaijan. 
-                        We collected and analyzed relevant data on infection rates, vaccination rates, and other key factors, and used a data 
-                        simulation tool to model the spread of the disease under different scenarios. We also modeled the impact of different 
-                        vaccination strategies, including timing and coverage rates, and evaluated their effectiveness in reducing the spread 
-                        of the disease. Through this project, we were able to gain valuable insights into the best approaches for preventing 
-                        and controlling infectious disease outbreaks in Azerbaijan, 
-                        and our simulations provided valuable data to inform public health policy and decision-making.
-                    </p>
-                    <!-- <a class="border-bottom border-primary text-decoration-none" href="">Read More</a> -->
-                </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-briefcase service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">ERP integration</h4>
-                    </div>
-                    <p>
-                        This ERP project involved implementing an integrated software system to streamline our organization's various business processes, 
-                        including finance, accounting, human resources, and supply chain management. We identified our business needs and selected an ERP 
-                        system that best fit our requirements, and created a detailed project plan that outlined the timeline, tasks, and resources needed 
-                        for a successful implementation. Our team worked collaboratively with the vendor to configure and customize the system, migrate data, 
-                        and train our staff. Through this project, 
-                        we were able to achieve significant efficiencies, reduce redundancies, and improve our ability to make data-driven decisions.
-                    </p>
-                    <!-- <a class="border-bottom border-primary text-decoration-none" href="">Read More</a> -->
-                </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-briefcase service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Book Recommendation</h4>
-                    </div>
-                    <p>
-                        We developed a book recommendation system that uses content filtering techniques to provide personalized book recommendations to users 
-                        based on their reading history and preferences. We enriched a large dataset of book titles and authors with metadata such as genre, 
-                        subgenre, and synopsis using web scraping techniques. We then used collaborative filtering and content-based filtering to generate book 
-                        recommendations. We built a user-friendly website called BOOKLE that integrated our book recommendation system and allowed users to create 
-                        a profile, rate books, and receive personalized book recommendations. The website also allowed users to filter their recommendations based on different criteria. 
-                        Through this project, we gained valuable insights into how to optimize our recommendation algorithm to better meet the needs and preferences of our users.
-                    </p>
-                    <!-- <a class="border-bottom border-primary text-decoration-none" href="">Read More</a> -->
-                </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-briefcase service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Agriculture sector</h4>
-                    </div>
-                    <p>
-                        Our agriculture project in Azerbaijan focused on increasing crop productivity for vegetables, fruits, and cattle breeding. 
-                        We used data analytics to collect and analyze production, planting area, and productivity data, and identified patterns and 
-                        trends in crop performance. This information was used to optimize irrigation and fertilization systems, which led to increased 
-                        crop yields and reduced water usage.
-
-                        We also introduced weather forecasting and pest monitoring systems, which provided farmers with real-time information on weather 
-                        conditions and pest populations. This allowed farmers to take timely action to protect their crops, resulting in improved crop 
-                        quality and higher yields.
-
-                        Overall, our project helped farmers in Azerbaijan to achieve more sustainable and profitable agricultural practices by providing
-                         them with data-driven insights and recommendations. This project demonstrated the potential of data analytics to optimize agricultural
-                         practices and improve food security.
-                    </p>
-                    <!-- <a class="border-bottom border-primary text-decoration-none" href="">Read More</a> -->
-                </div>
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-briefcase service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Real Estate survey</h4>
-                    </div>
-                    <p>
-                        Our Real Estate survey analysis project in Azerbaijan involved collecting and analyzing data on the local real estate market. We collected information on property prices, location, size, and other relevant factors, and used data analytics tools to identify trends and patterns in the market. We also conducted surveys to gather information from real estate agents and property owners.
-
-                        Using this information, we created a comprehensive report on the real estate market in Azerbaijan, which provided valuable insights into the market conditions and trends. This report was used by investors and developers to make informed decisions about real estate investments.
-
-                        Our project was able to provide a data-driven approach to the real estate market in Azerbaijan, and helped to support better decision making for investors and developers. The insights and recommendations provided through this project can also be used to inform government policies and regulations related to the real estate market.
-                    </p>
-                    <!-- <a class="border-bottom border-primary text-decoration-none" href="">Read More</a> -->
-                </div>            
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-briefcase service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Data Warehouse</h4>
-                    </div>
-                    <p>
-                        Our Data Warehouse project involved developing a centralized database for an organization's data storage and analysis needs. We designed and built a system to gather data from multiple sources, organize it into a standardized format, and store it in a central repository.
-
-                        Our Data Warehouse solution allowed for efficient data processing and analysis, with tools for reporting and data visualization. It enabled the organization to have quick and easy access to relevant data, resulting in better and faster decision-making.
-
-                        Our project demonstrated the value of a Data Warehouse solution, providing a cost-effective way to store and analyze large volumes of data in a centralized and standardized manner, while also making it easily accessible for decision-makers.
-                    </p>
-                    <!-- <a class="border-bottom border-primary text-decoration-none" href="">Read More</a> -->
-                </div>    
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-briefcase service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">MKT</h4>
-                    </div>
-                    <p>
-                        Our project for MKT, a cotton company in Azerbaijan, focused on optimizing the company's cotton production process. We collected and analyzed data on various aspects of cotton production, including planting, harvesting, and processing.
-
-                        Using this information, we developed and implemented a data-driven approach to cotton production, which included identifying the most effective planting and harvesting techniques, optimizing irrigation and fertilization schedules, and improving the quality of the cotton crop.
-
-                        Our project helped to increase the company's cotton production efficiency and yield, resulting in cost savings and increased profits for the company. Our data-driven approach can be applied to other areas of agriculture, helping to optimize production and improve profitability.
-                    </p>
-                    <!-- <a class="border-bottom border-primary text-decoration-none" href="">Read More</a> -->
-                </div>    
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-briefcase service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Unemployment Agency</h4>
-                    </div>
-                    <p>
-                        Our project with the Unemployment Agency involved using data analytics to better understand the unemployment situation in Azerbaijan. We collected data from the Azerbaijani Statistical Committee on various aspects of unemployment, including age, gender, education, and industry.
-
-                        We performed descriptive and diagnostic analytics on the data, which allowed us to identify correlations between different variables. For example, we found that unemployment rates were higher among certain age groups and education levels, and that unemployment was more prevalent in certain industries.
-
-                        Using this information, we provided recommendations to the Unemployment Agency on how to more effectively target their services and support to those in need.
-                    </p>
-                    <!-- <a class="border-bottom border-primary text-decoration-none" href="">Read More</a> -->
-                </div>    
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-briefcase service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Web Intelligence</h4>
-                    </div>
-                    <p>
-                        This web intelligence project focuses on the collection, analysis, and dissemination of information obtained from publicly available 
-                        sources on the internet. Using a variety of tools and techniques, the project aims to provide valuable insights into a specific topic, 
-                        person, or organization. The project includes the use of various types of web intelligence, including Open-Source Intelligence (OSINT), 
-                        Signals Intelligence (SIGINT), Geospatial Intelligence (GEOINT), and Cyber Intelligence (CYBINT), to gather and analyze data from a range 
-                        of sources such as social media, news outlets, blogs, and government databases. 
-                        The project's goal is to provide clients with accurate and reliable information to support their decision-making processes.
-                    </p>
-                    <!-- <a class="border-bottom border-primary text-decoration-none" href="">Read More</a> -->
-                </div>    
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-briefcase service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">NLP</h4>
-                    </div>
-                    <p>
-                        Our NLP project for Azerbaijani language involved developing a set of tools to preprocess and analyze text data in Azerbaijani. We used natural language processing techniques to perform tasks such as tokenization, stemming, and stop word removal on a dataset of Azerbaijani text.
-
-                        Using these tools, we were able to perform various analyses on the text data, such as sentiment analysis or topic modeling. For example, we identified common themes and sentiments expressed in Azerbaijani news articles.
-
-                        Our NLP project demonstrated the potential for natural language processing technology to be used in the Azerbaijani language space, and provided a foundation for further development of NLP applications for Azerbaijani language, such as chatbots or automated customer support systems.
-                    </p>
-                    <!-- <a class="border-bottom border-primary text-decoration-none" href="">Read More</a> -->
-                </div>    
-                <div class="col-lg-4 col-md-6 text-center mb-5">
-                    <div class="d-flex align-items-center justify-content-center mb-4">
-                        <i class="fa fa-2x fa-briefcase service-icon bg-primary text-white mr-3"></i>
-                        <h4 class="font-weight-bold m-0">Business Intelligence</h4>
-                    </div>
-                    <p>
-                        This business intelligence project involved using data analytics and visualization tools to gather, 
-                        analyze, and present information that helped our organization make informed business decisions. 
-                        We identified a business problem and collected relevant data from multiple sources, cleaned and 
-                        preprocessed the data, and used a BI tool to create visualizations that helped us identify trends, 
-                        patterns, and insights in the data. We then analyzed and interpreted the results and shared them with 
-                        relevant stakeholders in our organization to drive innovation and improve business performance. 
-                        Through this project, we were able to gain valuable insights and optimize our business processes to better meet our goals.  
-                    </p>
-                    <!-- <a class="border-bottom border-primary text-decoration-none" href="">Read More</a> -->
-                </div>    
-            </div>
-        </div>
-    </div>
-    <!-- Services End -->
-       
-
-    <!-- Contact Start -->
-    <div class="container-fluid py-5" id="contact">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #cacaca;">Contact</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Contact Me</h1>
-            </div>
-            <!-- <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="contact-form text-center">
-                        <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                            <div class="form-row">
-                                <div class="control-group col-sm-6">
-                                    <input type="text" class="form-control p-4" id="name" placeholder="Your Name"
-                                        required="required" data-validation-required-message="Please enter your name" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="control-group col-sm-6">
-                                    <input type="email" class="form-control p-4" id="email" placeholder="Your Email"
-                                        required="required" data-validation-required-message="Please enter your email" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control p-4" id="subject" placeholder="Subject"
-                                    required="required" data-validation-required-message="Please enter a subject" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="Message"
-                                    required="required"
-                                    data-validation-required-message="Please enter your message"></textarea>
-                                <p class="help-block text-danger"></p>
+                    <div style="margin-top: 3rem; padding: 2rem; background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border);">
+                        <h4 style="color: var(--text-primary); margin-bottom: 1rem;">Quick Stats</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <div>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">Publications</p>
+                                <p style="color: var(--accent); font-size: 2rem; font-weight: 700; font-family: 'Space Mono', monospace;">5+</p>
                             </div>
                             <div>
-                                <button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Send
-                                    Message</button>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">Years Experience</p>
+                                <p style="color: var(--accent); font-size: 2rem; font-weight: 700; font-family: 'Space Mono', monospace;">4+</p>
                             </div>
-                        </form>
+                            <div>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">Users Impacted</p>
+                                <p style="color: var(--accent); font-size: 2rem; font-weight: 700; font-family: 'Space Mono', monospace;">10M+</p>
+                            </div>
+                            <div>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">Cost Savings</p>
+                                <p style="color: var(--accent); font-size: 2rem; font-weight: 700; font-family: 'Space Mono', monospace;">$4M+</p>
+                            </div>
+                        </div>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Contact End -->
+    </section>
 
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
-        <div class="container text-center py-5">
-            <div class="d-flex justify-content-center mb-4">
-                <a class="btn btn-light btn-social mr-2" href="https://github.com/ElsunNabatov" target="_blank"><i class="fab fa-github"></i></a>
-                <!-- <a class="btn btn-light btn-social mr-2" href="https://www.kaggle.com/arzuallahverdiyev" target="_blank"><i class="fab fa-kaggle"></i></a> -->
-                <a class="btn btn-light btn-social mr-2" href="https://www.linkedin.com/in/elsunnabatov/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <!-- <a class="btn btn-light btn-social mr-2" href="https://medium.com/@arzu.allahverdi97" target="_blank"><i class="fab fa-medium"></i></a> -->
-                <a class="btn btn-light btn-social mr-2" href="https://www.facebook.com/elsun.nabatov.90" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-light btn-social mr-2" href="https://www.instagram.com/elsun_n/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <!-- <a class="btn btn-light btn-social mr-2" href="https://twitter.com/allahverdi97" target="_blank"><i class="fab fa-twitter"></i></a> -->
-                <a class="btn btn-light btn-social" href = "mailto: elsunnabatov@gmail.com"><i class="fa fa-envelope"></i></a>
-            </div>
-            <!-- <div class="d-flex justify-content-center mb-3">
-                <a class="text-white" href="#">Privacy</a>
-                <span class="px-3">|</span>
-                <a class="text-white" href="#">Terms</a>
-                <span class="px-3">|</span>
-                <a class="text-white" href="#">FAQs</a>
-                <span class="px-3">|</span>
-                <a class="text-white" href="#">Help</a>
-            </div> -->
-            <p class="m-0">&copy; <a class="text-white font-weight-bold" href="#">Elsun Nabatov.</a>
-                All Rights Reserved 2023. Designed by <a class="text-white font-weight-bold" target="_blank" href="https://htmlcodex.com">HTML Codex</a>
-            </p>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Elsun Nabatov. All Rights Reserved.</p>
+            <p style="font-size: 0.9rem;">Built with passion for AI and neuroscience</p>
         </div>
-    </div>
-    <!-- Footer End -->
+    </footer>
 
-    <!-- Scroll to Bottom -->
-    <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/typed/typed.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 
 </html>
